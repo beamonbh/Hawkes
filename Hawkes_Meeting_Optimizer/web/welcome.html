@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+     	<title>Brett Perrine</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <style>
+            body{ font-family: Calibri; background-color: #393E41; margin-left: 20px; margin-right: 30px; color: #F6F7EB; }
+ h1{ text-align: center; background-color: #A1A499; margin-right: 0px; } 
+ h3{ border-bottom-style: solid; border-color: #FFFC31; border-width: 1px; margin-right: 300px; }
+ li{ padding-bottom: 5px; } 
+ p{ }
+ form{ margin-left: 30px; }         
+        </style>
+    </head>
+    <body>
+        <h3>Welcome to the Hawkes Learning Systems Meeting Optimizer!</h3>
+        <p>Here you will be able to create, view and manage your meetings in an efficient manor.  The goals of this project is to create a web aplication that allows meeting facilitators to have a tool that streamlines the meeting process as well as allows the "proctor" to view topics they're planning to discuss in a cohesive environment.</p>
+        <p>If you would like to join, please click the button below.  You will be redirected to a page where you will enter the following:</p>
+        <ol>
+            <li>Email Address</li>
+            <li>First Name</li>
+            <li>Last Name</li>
+        </ol>
+        <form action="signInServlet" method="post">
+            <input type="hidden" name="action" value="join">        
+            <label>&nbsp;</label>
+        <input type="submit" value="Join Now">
+    </form>
+    </body>
+</html>
