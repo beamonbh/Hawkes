@@ -82,9 +82,12 @@ public class AdminIO {
     }
     
     public static void insertAdmin(Admin admin) {
+          if(!exists(admin.getEmail()))
+       {
         admins = selectAdmins();
         admins.add(admin);
         saveAdmins(admins);
+       }
     }
     
     public static void updateAdmin(Admin admin) {
