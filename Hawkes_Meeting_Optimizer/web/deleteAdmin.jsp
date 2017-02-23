@@ -10,12 +10,9 @@
         <link rel="stylesheet" type="text/css" href="project1css.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Delete Confirmation</title>
-        <style>body{ font-family: Calibri; background-color: #393E41; margin-left: 20px; margin-right: 30px; color: #F6F7EB; }
- h1{ text-align: center; background-color: #A1A499; margin-right: 0px; } 
- h3{ border-bottom-style: solid; border-color: #FFFC31; border-width: 1px; margin-right: 300px; }
- li{ padding-bottom: 5px; } 
- p{ }
- form{ margin-left: 30px; }         </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="Hawkes_CSS.css">
     </head>
     <body>
         <h1>Are you sure you want to delete this administrator?</h1>
