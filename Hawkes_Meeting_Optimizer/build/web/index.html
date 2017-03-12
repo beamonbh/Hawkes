@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Hawkes Meeting Optimizer</title>
+    <link rel="stylesheet" href="styles/main.css" type="text/css"/> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="Hawkes_CSS.css">
+</head>
+<body>
+    <div class="container">
+        <div class="page-header">
+            <h1>Sign in Below</h1>
+        </div>
+        <p>To join our email list, enter your name and
+           email address below. Please</p>
+        <form class="form-horizontal" action="signInServlet" method="post" >
+            <input type="hidden" name="action" value="addNewAdmin">
+            <div class="form-group">
+              <label class="control-label col-sm-2" for="email">Email:</label>
+              <div class="col-sm-3">          
+                <input type="email" name="email" class="form-control" id="email" placeholder="Enter Email" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-2" for="lastName">First Name:</label>
+              <div class="col-sm-3">          
+                <input type="text" name="firstName" class="form-control" id="firstName" placeholder="First Name" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-2" for="lastName">Last Name:</label>
+              <div class="col-sm-3">          
+                <input type="text" name="lastName" class="form-control" id="lastName" placeholder="First Name" required>
+              </div>
+            </div>
+            <div class="form-group">        
+              <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" value="Join Now" class="btn btn-primary">Submit</button>
+              </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

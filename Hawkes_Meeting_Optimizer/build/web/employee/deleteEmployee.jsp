@@ -1,5 +1,5 @@
 <%-- 
-    Document   : Delete Admin Page
+    Document   : Delete Employee Page
     Author     : Brett Perrine
 --%>
 
@@ -9,7 +9,7 @@
     <head>
         <link rel="stylesheet" type="text/css" href="project1css.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Delete Confirmation</title>
+        <title>Delete Employee Confirmation</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="js/jquery.tablesorter.min.js"></script>
@@ -19,23 +19,24 @@
     <body>
         <div class="container">
             <div class="page-header">
-                <h1>Are you sure you want to delete this administrator?</h1>
+                <h1>Are you sure you want to delete this employee?</h1>
             </div>
-        
-            <form action="signInServlet" method="post">
+
+            <form action="employeeServlet" method="post">
                 <input type="hidden" name="action" value="delete">
-                <label>Email: ${admin.email}</label><br>
-                <label>First Name: ${admin.firstName}</label><br>
-                <label>Last Name: ${admin.lastName}</label><br>
+                <label>Email: ${employee.email}</label><br>
+                <label>First Name: ${employee.firstName}</label><br>
+                <label>Last Name: ${employee.lastName}</label><br>
+                <label>Position: ${employee.position}</label><br>
             </form>
-            <form action="signInServlet" method="post">  
+            <form action="employeeServlet" method="post">  
                 <input type="hidden" name="action" value="confirmDelete">
-                <input type="hidden" name="emailToDelete" value="${admin.email}">
+                <input type="hidden" name="emailToDelete" value="${employee.email}">
 
                 <label>&nbsp;</label>
                 <input type="submit" value="Yes" id="submit">
             </form>
-            <form action="signInServlet" method="post">  
+            <form action="employeeServlet" method="post">  
                 <input type="hidden" name="action" value="display">
 
                 <label>&nbsp;</label>

@@ -1,6 +1,7 @@
 <%-- 
-    Document   : Edit Admin
-    Author     : Brett Perrine
+    Document   : editEmployee
+    Created on : Feb 23, 2017, 5:03:38 PM
+    Author     : brettperrine
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -8,17 +9,19 @@
     <head>
         <link rel="stylesheet" type="text/css" href="project1css.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Edit Administrator</title>
-        <<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <title>Edit Employee Information</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="js/jquery.tablesorter.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css">
         <link rel="stylesheet" type="text/css" href="Hawkes_CSS.css">
     </head>
     <body>
         <div class="container">
             <div class="page-header">
-                <h1>Edit Administrator Information</h1>
-            </div>  
-            <form action="signInServlet" method="post">
+                <h1>Edit Employee Information</h1>
+            </div>
+            <form action="employeeServlet" method="post">
                 <label>Email:</label>
                 <input type="hidden" name="emailEdit" value="${email}">
                 <input placeholder="${email}" type="email"><br>        
@@ -29,11 +32,13 @@
                 <label>Last Name:</label>
                 <input placeholder="${lastName}" type="text"
                        name="lastNameEdit" value="${lastName}"><br>
-
+            <label>Position:</label>
+                <input placeholder="${position}" type="text"
+                       name="position" value="${position}"><br>
                 <input type="hidden" name="action" value="editConfirm">
                 <label>&nbsp;</label>
                 <input type="hidden" name="emailToEdit" value="${email}">
-                <input type="submit" value="Update Admin" id="submit">   
+                <input type="submit" value="Update Employee" id="submit">   
             </form>
         </div>
     </body>

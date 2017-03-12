@@ -1,12 +1,16 @@
-  /*
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Employee;
+
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 
-package Admin;
-
-import Admin.data.AdminIO;
 import java.io.IOException;
 
 import java.util.List;
@@ -21,7 +25,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author brett perrine
  */
-public class signInServlet extends HttpServlet {
+public class employeeServlet extends HttpServlet {
 
    
     /**
@@ -50,8 +54,8 @@ public class signInServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        String path = this.getServletContext().getRealPath("/WEB-INF/Admins.txt");
-        AdminIO.init(path);   
+        String path = this.getServletContext().getRealPath("/WEB-INF/Employees.txt");
+        EmployeeIO.init(path);   
         String url = "/welcome.html";
         
         String action=request.getParameter("action");        
@@ -63,21 +67,21 @@ public class signInServlet extends HttpServlet {
             url = "/welcome.html";
         }
         else if(action.equals("display")){
-            List<Admin> admins = AdminIO.selectAdmins();
-            request.setAttribute("admins", admins);
-            url="/displayAdmins.jsp";
+            List<Employee> employees = EmployeeIO.selectEmployees();
+            request.setAttribute("employees", employees);
+            url="/employee/displayEmployees.jsp";
         }
         else if(action.equals("addNew"))
         {
-            url="/addAdmin.jsp";
+            url="/employee/addEmployee.jsp";
         }
         
         else if(action.equals("delete")){
             String email = request.getParameter("email");
-            Admin a = AdminIO.selectAdmin(email);
-            request.setAttribute("admin", a);
+            Employee e = EmployeeIO.selectEmployee(email);
+            request.setAttribute("employee", e);
             
-            url ="/deleteAdmin.jsp";
+            url ="/employee/deleteEmployee.jsp";
         }
    
         
@@ -88,53 +92,58 @@ public class signInServlet extends HttpServlet {
         
         else if(action.equals("edit")){
             String email = request.getParameter("email");
-            Admin a = AdminIO.selectAdmin(email);
-            request.setAttribute("email", a.getEmail());
-            request.setAttribute("firstName", a.getFirstName());
-            request.setAttribute("lastName", a.getLastName());
+            Employee e = EmployeeIO.selectEmployee(email);
+            request.setAttribute("email", e.getEmail());
+            request.setAttribute("firstName", e.getFirstName());
+            request.setAttribute("lastName", e.getLastName());
+            request.setAttribute("position", e.getPosition());
             
-            url="/editAdmin.jsp";
+            url="/employee/editEmployee.jsp";
         }
         
         else if(action.equals("confirmDelete")){
             String email = request.getParameter("emailToDelete");
-            Admin a = AdminIO.selectAdmin(email);
-            AdminIO.deleteAdmin(a);
-            List<Admin> admins = AdminIO.selectAdmins();
-            request.setAttribute("admins", admins);
-            url = "/displayAdmins.jsp";       
+            Employee e = EmployeeIO.selectEmployee(email);
+            EmployeeIO.deleteEmployee(e);
+            List<Employee> employees = EmployeeIO.selectEmployees();
+            request.setAttribute("employees", employees);
+            url = "/employee/displayEmployees.jsp";       
         }
         
-        else if(action.equals("addNewAdmin")){
-            String newEmail= request.getParameter("email");
-            String newFirstName= request.getParameter("firstName");
-            String newLastName= request.getParameter("lastName");
+        else if(action.equals("addNewEmployee")){
+            String newEmail = request.getParameter("email");
+            String newFirstName = request.getParameter("firstName");
+            String newLastName = request.getParameter("lastName");
+            String newPosition = request.getParameter("position");
             
-            Admin newAdmin = new Admin();
-            newAdmin.setEmail(newEmail);
-            newAdmin.setFirstName(newFirstName);
-            newAdmin.setLastName(newLastName);
+            Employee newEmployee = new Employee();
+            newEmployee.setEmail(newEmail);
+            newEmployee.setFirstName(newFirstName);
+            newEmployee.setLastName(newLastName);
+            newEmployee.setPosition(newPosition);
             
             HttpSession session = request.getSession();
            
             
-            if (newEmail.isEmpty() || newFirstName.isEmpty() || newLastName.isEmpty())
+            if (newEmail.isEmpty() || newFirstName.isEmpty() || newLastName.isEmpty()
+                  || newPosition.isEmpty())
             {
                 // forward to the view to get missing parameters
-                url = "/addAdmin.jsp";
+                url = "/employee/addEmployee.jsp";
                 
             }
             else
             {
                
-                AdminIO.insertAdmin(newAdmin);
+                EmployeeIO.insertEmployee(newEmployee);
 
-                // forward to the view
-                url = "/displayAdmins.jsp";
+           List<Employee> employees = EmployeeIO.selectEmployees();
+            request.setAttribute("employees", employees);
+                url = "/employee/displayEmployees.jsp";
             }   
-            request.setAttribute("admin", newAdmin);
-            List<Admin> admins = AdminIO.selectAdmins();
-            session.setAttribute("admins", admins);
+            List<Employee> employees = EmployeeIO.selectEmployees();
+         request.setAttribute("employees", employees);
+           
         }
         
         else if(action.equals("editConfirm")){
@@ -142,32 +151,30 @@ public class signInServlet extends HttpServlet {
             String email = request.getParameter("emailEdit");
             String firstName = request.getParameter("firstNameEdit");
             String lastName = request.getParameter("lastNameEdit");
+            String position = request.getParameter("position");
             
-            Admin admin = AdminIO.selectAdmin(email);
-            System.out.println(admin.getFirstName());
-            admin.setFirstName(firstName);
-            admin.setLastName(lastName);
-            System.out.println(admin.getFirstName());
+            Employee employee = EmployeeIO.selectEmployee(email);
+       
+            employee.setFirstName(firstName);
+            employee.setLastName(lastName);
+            employee.setPosition(position);
 
             
-            if (firstName.isEmpty() || lastName.isEmpty())
+            if (firstName.isEmpty() || lastName.isEmpty() || position.isEmpty())
             {
                 // forward to the view to get missing parameters
-                url = "/editAdmin.jsp";
+                url = "/employee/editEmployee.jsp";
                 
             }
             else
             {
           
-                AdminIO.updateAdmin(admin);
-                Admin a2 = AdminIO.selectAdmin(email);
-                System.out.println(a2.getFirstName());
-
-                List<Admin> admins = AdminIO.selectAdmins();
-                request.setAttribute("admins", admins);
+                EmployeeIO.updateEmployee(employee);
+                List<Employee> employees = EmployeeIO.selectEmployees();
+                request.setAttribute("employees", employees);
 
                 // forward to the view
-                url = "/displayAdmins.jsp";
+                url = "/employee/displayEmployees.jsp";
             }   
         }
         
