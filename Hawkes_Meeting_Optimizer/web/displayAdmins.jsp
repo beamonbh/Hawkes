@@ -25,6 +25,18 @@
             <div class="page-header">
                 <h1>Administrators:</h1>
             </div>
+            <ul class="nav nav-pills nav-justified">
+                <li class="active">
+                    <a href="http://localhost:8084/Hawkes_Meeting_Optimizer/signInServlet">
+                        Administrators
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="http://localhost:8084/Hawkes_Meeting_Optimizer/employeeServlet">
+                        Employees
+                    </a>
+                </li>
+            </ul>
             <table id="adminTable" class="table table-hover">
                 <thead>
                     <tr>
