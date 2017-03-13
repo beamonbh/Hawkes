@@ -14,29 +14,28 @@ and open the template in the editor.
         <link rel="stylesheet" type="text/css" href="Hawkes_CSS.css">
     </head>
     <body>
-        <div class="container">
-            <div class="page-header">
+        <div class="container text-center" >
+            
+            <div class="jumbotron">
                 <h2>Welcome to the Hawkes Learning Systems Meeting Optimizer!</h2>
             </div>
-            <p>Here you will be able to create, view and manage your meetings in an efficient manor.  The goals of this project is to create a web aplication that allows meeting facilitators to have a tool that streamlines the meeting process as well as allows the "proctor" to view topics they're planning to discuss in a cohesive environment.</p>
-            <p>If you would like to join, please click the button below.  You will be redirected to a page where you will enter the following:</p>
-            <ol>
-                <li>Email Address</li>
-                <li>First Name</li>
-                <li>Last Name</li>
-            </ol>
-            <div class = "btn-group btn-group-justified">
-                <form action="signInServlet" method="post">
-                    <button type="submit" class="btn btn-primary" name="action" value="join" >
-                        Join Now
-                    </button>
-                </form>
-                <form action="employeeServlet" method="post">
-                    <button type="submit" class="btn btn-primary" name="action" value="display">
-                        View Employees
-                    </button>
-                </form>
+            
+            <div class="row">
+                <div class="col-sm-6">
+                    <form action="signInServlet" method="post">
+                        <button type="submit" class="btn btn-primary" name="action" value="join" >
+                            Join Now
+                        </button>
+                    </form>
+                </div>
+                <div class="col-sm-6">
+                    <form action="employeeServlet" method="post">
+                        <button type="submit" class="btn btn-primary" name="action" value="display">
+                            View Employees
+                        </button>
+                    </form>
+                </div>
             </div>
-    </div>
+        </div>
     </body>
 </html>

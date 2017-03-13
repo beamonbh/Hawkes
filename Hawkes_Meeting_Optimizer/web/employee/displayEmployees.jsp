@@ -24,16 +24,20 @@
             <div class="page-header">
                 <h1>Employees:</h1>
             </div>
-            <ul class="nav nav-pills nav-justified">
+            <ul class="nav nav-tabs">
                 <li class="active">
-                    <a href="http://localhost:8084/Hawkes_Meeting_Optimizer/signInServlet">
-                        Administrators
-                    </a>
+                    <form action="signInServlet" method="post">
+                        <button type="submit" class="btn btn-primary" name="action" value="join" >
+                            Administrators
+                        </button>
+                    </form>
                 </li>
-                <li class="active">
-                    <a href="http://localhost:8084/Hawkes_Meeting_Optimizer/employeeServlet">
-                        Employees
-                    </a>
+                <li >
+                    <form action="employeeServlet" method="post">
+                        <button type="submit" class="btn btn-primary" name="action" value="display">
+                            Employees
+                        </button>
+                    </form>
                 </li>
             </ul>
             <table id="employeeTable" class="table table-hover">
