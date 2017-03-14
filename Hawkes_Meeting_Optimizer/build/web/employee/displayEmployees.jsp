@@ -43,12 +43,12 @@
             <table id="employeeTable" class="table table-hover">
                 <thead>
                     <tr>
-                        <th>Email</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Position</th>
-                        <th>Edit</th>
-                        <th>Delete</th>
+                        <th>Email<i class="icon-arrow-up"></i></th>
+                        <th>First Name<i class="fa fa-fw fa-sort"></i></th>
+                        <th>Last Name<i class="fa fa-fw fa-sort"></i></th>
+                        <th>Position<i class="fa fa-fw fa-sort"></i></th>
+                        <th>Edit<i class="fa fa-fw fa-sort"></i></th>
+                        <th>Delete<i class="fa fa-fw fa-sort"></i></th>
                     </tr>
                 </thead>
                 <tbody>

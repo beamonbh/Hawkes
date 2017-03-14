@@ -19,31 +19,40 @@ and open the template in the editor.
     </head>
     <body>
         <div class="container">
-            <div class="pad_header">
+            <div class="page-header">
                 <h1>Add New Administrator</h1>
-            </div>>
+            </div>
        
-            <form action="signInServlet" method="post">
-
-
-                 <label>Email:</label>
-                 <input type="text" name="email" value="${newAdmin.email}" >
-                 <br>
-                 <label>First Name: </label>
-                 <input type="text" name="firstName" value="${newAdmin.firstName}">
-        <br>
-                 <label>Last Name:</label>
-                 <input type="text" name="lastName" required value="${newAdmin.lastName}">
-        <br>
-                 <input type="submit" value="Add Administrator">
-                 <input type="hidden" name="action" value="addNewAdmin">
+            <form class="form-horizontal" action="signInServlet" method="post">
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="email">Email:</label>
+                    <div class="col-sm-3">          
+                      <input type="text" name="email" class="form-control" value="${newAdmin.email}" placeholder="Enter Email" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="firstName">Email:</label>
+                    <div class="col-sm-3">          
+                      <input type="text" name="firstName" class="form-control" value="${newAdmin.firstName}" placeholder="First Name" required>
+                    </div>
+                </div>    
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="lastName">Email:</label>
+                    <div class="col-sm-3">          
+                      <input type="text" name="lastName" class="form-control" value="${newAdmin.lastName}" placeholder="Last Name" required>
+                    </div>
+                </div>
+                <button class="btn btn-primary" type="submit" name="action" value="addNewAddmin">
+                    Add Administrator
+                </button>
             </form>
-                 <form>
+                    
+            <form>
 
-                 <input type="submit" value="View Admins">
-                 <input type="hidden" name="action" value="display">
+               <input type="submit" value="View Admins">
+               <input type="hidden" name="action" value="display">
 
-             </form>
+           </form>
         </div>
     </body>
 </html>

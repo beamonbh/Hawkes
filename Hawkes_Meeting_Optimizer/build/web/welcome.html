@@ -14,28 +14,29 @@ and open the template in the editor.
         <link rel="stylesheet" type="text/css" href="Hawkes_CSS.css">
     </head>
     <body>
-        <div class="container text-center" >
+        <div class="container" >
             
-            <div class="jumbotron">
-                <h2>Welcome to the Hawkes Learning Systems Meeting Optimizer!</h2>
+            <div class="jumbotron text-center">
+                <h1>Welcome to the Hawkes Learning Systems Meeting Optimizer!</h1>
             </div>
             
             <div class="row">
-                <div class="col-sm-6">
+                <div class="col-sm-6 text-center">
                     <form action="signInServlet" method="post">
                         <button type="submit" class="btn btn-primary" name="action" value="join" >
                             Join Now
                         </button>
                     </form>
                 </div>
-                <div class="col-sm-6">
+                <div class="col-sm-6 text-center">
                     <form action="employeeServlet" method="post">
                         <button type="submit" class="btn btn-primary" name="action" value="display">
                             View Employees
                         </button>
                     </form>
-                </div>
+                </div>   
             </div>
+            
         </div>
     </body>
 </html>

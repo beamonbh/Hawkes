@@ -77,8 +77,8 @@
                 </c:forEach> 
                 </tbody>
             </table>
-            <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
-            <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+            <script type="text/javascript" charset="utf-8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
+            <script type="text/javascript" charset="utf-8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
             <script>
                 $(function(){
                   $("#adminTable").dataTable();
@@ -86,10 +86,11 @@
             </script>
 
             <form action="signInServlet" method="post">
-                <input type="hidden" name="action" value="addNewAdmin">
-                <label>&nbsp;</label>
-                <input type="submit" value="Add Admin" id="submit">
+                    <input type="hidden" name="action" value="addNew">
+                    <label>&nbsp;</label>
+                    <input type="submit" value="Add Admin" id="submit">
             </form>
+            
         </div>
     </body>
 </html>

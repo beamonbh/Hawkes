@@ -20,10 +20,6 @@
         <link rel="stylesheet" type="text/css" href="Hawkes_CSS.css">
     </head>
     <body>
-        <div class="container">
-            <hr>
-            <div id="claendar">
-            </div>
-        </div>
+        
     </body>
 </html>
