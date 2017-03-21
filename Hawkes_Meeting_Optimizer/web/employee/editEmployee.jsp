@@ -38,7 +38,7 @@
                 <input type="hidden" name="action" value="editConfirm">
                 <label>&nbsp;</label>
                 <input type="hidden" name="emailToEdit" value="${email}">
-                <input type="submit" value="Update Employee" id="submit">   
+                <input type="submit" class="btn btn-default" value="Update Employee" id="submit">   
             </form>
         </div>
     </body>

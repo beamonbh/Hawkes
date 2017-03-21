@@ -20,6 +20,7 @@
         <link rel="stylesheet" type="text/css" href="Hawkes_CSS.css">
     </head>
     <body>
-        
+        <div id="calendar"></div>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script>
     </body>
 </html>

@@ -53,14 +53,23 @@ and open the template in the editor.
                         <input type="text" name="position" required value="${newEmployee.position}">
                     </div>
                 </div>
-                <input type="submit" value="Add Employee">
-                <input type="hidden" name="action" value="addNewEmployee">
-           </form>
-      <form action="employeeServlet" method="post">
-
-                <input type="submit" value="View Employees">
-                <input type="hidden" name="action" value="display">
-
+                <div class="form-group">
+                    <label class="control-label col-sm-2"></label>
+                    <div class="col-sm-3">
+                        <input type="submit" class="btn btn-info" value="Add Employee">
+                        <input type="hidden" name="action" value="addNewEmployee">
+                    </div>
+                </div>
+                
+            </form>
+            <form class="form-horizontal" action="employeeServlet" method="post">
+                <div class="form-group">
+                    <label class="control-label col-sm-2"></label>
+                    <div class="col-sm-3">
+                        <input type="submit" class="btn btn-info" value="View Employees">
+                        <input type="hidden" name="action" value="display">
+                    </div>
+                </div>
             </form>
         </div>
     </body>

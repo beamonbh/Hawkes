@@ -24,22 +24,22 @@
             <div class="page-header">
                 <h1>Employees:</h1>
             </div>
-            <ul class="nav nav-tabs">
-                <li class="active">
-                    <form action="signInServlet" method="post">
-                        <button type="submit" class="btn btn-primary" name="action" value="join" >
-                            Administrators
-                        </button>
-                    </form>
-                </li>
-                <li >
-                    <form action="employeeServlet" method="post">
-                        <button type="submit" class="btn btn-primary" name="action" value="display">
-                            Employees
-                        </button>
-                    </form>
-                </li>
-            </ul>
+                <ul class="nav nav-pills nav-justified">
+                    <li >
+                        <form action="signInServlet" method="post">
+                            <button type="submit" value="display" class="btn btn-primary">
+                                Home
+                            </button>
+                        </form>
+                    </li>
+                    <li class="active">
+                        <form action="employeeServlet" method="post">
+                            <button type="submit" class="btn btn-primary" name="action" value="display">
+                                Employees
+                            </button>
+                        </form>
+                    </li>
+                </ul>
             <table id="employeeTable" class="table table-hover">
                 <thead>
                     <tr>
@@ -63,7 +63,7 @@
                                 <input type="hidden" name="action" value="edit">
                                 <label>&nbsp;</label>
                                 <input type="hidden" name="email" value="${employee.email}">
-                                <input type="submit" value="Edit" id="submit">
+                                <input type="submit" class="btn btn-default" value="Edit" id="submit">
                             </form>
                         </td>         
                         <td>
@@ -71,7 +71,7 @@
                                 <input type="hidden" name="action" value="delete">
                                 <label>&nbsp;</label>
                                 <input type="hidden" name="email" value="${employee.email}">
-                                <input type="submit" value="Delete" id="submit">           
+                                <input type="submit" class="btn btn-danger btn-info" value="Delete" id="submit">           
                             </form>
                         </td>       
                     </tr>
@@ -89,7 +89,7 @@
             <form action="employeeServlet" method="post">
                 <input type="hidden" name="action" value="addNew">
                 <label>&nbsp;</label>
-                <input type="submit" value="Add Employee" id="submit">
+                <input type="submit" class="btn btn-info"value="Add Employee" id="submit">
             </form>
         </div>
     </body>

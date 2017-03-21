@@ -31,28 +31,35 @@ and open the template in the editor.
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="control-label col-sm-2" for="firstName">Email:</label>
+                    <label class="control-label col-sm-2" for="firstName">First Name:</label>
                     <div class="col-sm-3">          
                       <input type="text" name="firstName" class="form-control" value="${newAdmin.firstName}" placeholder="First Name" required>
                     </div>
                 </div>    
                 <div class="form-group">
-                    <label class="control-label col-sm-2" for="lastName">Email:</label>
+                    <label class="control-label col-sm-2" for="lastName">Last Name:</label>
                     <div class="col-sm-3">          
                       <input type="text" name="lastName" class="form-control" value="${newAdmin.lastName}" placeholder="Last Name" required>
                     </div>
                 </div>
-                <button class="btn btn-primary" type="submit" name="action" value="addNewAddmin">
-                    Add Administrator
-                </button>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" ></label>
+                    <div class="col-sm-3">          
+                        <button class="btn btn-primary" type="submit" name="action" value="addNewAddmin">
+                            Add Administrator
+                        </button>
+                    </div>
+                </div>
             </form>
-                    
-            <form>
-
-               <input type="submit" value="View Admins">
-               <input type="hidden" name="action" value="display">
-
-           </form>
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label class="control-label col-sm-2"></label>
+                    <div class="col-sm-3">
+                        <input type="submit" class="btn btn-info" value="View Admins">
+                        <input type="hidden" name="action" value="display">
+                    </div>
+                </div>
+            </form>
         </div>
     </body>
 </html>

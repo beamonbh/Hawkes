@@ -28,8 +28,8 @@
             <ul class="nav nav-pills nav-justified">
                 <li class="active">
                     <form action="signInServlet" method="post">
-                        <button type="submit" class="btn btn-primary" name="action" value="join" >
-                            Administrators
+                        <button type="submit" value="display" class="btn btn-primary">
+                            Home
                         </button>
                     </form>
                 </li>
@@ -62,7 +62,7 @@
                             <input type="hidden" name="action" value="edit">
                             <label>&nbsp;</label>
                             <input type="hidden" name="email" value="${admin.email}">
-                            <input type="submit" value="Edit" id="submit">
+                            <input type="submit" class="btn btn-default" value="Edit" id="submit">
                         </form>
                     </td>         
                     <td>
@@ -70,7 +70,7 @@
                             <input type="hidden" name="action" value="delete">
                             <label>&nbsp;</label>
                             <input type="hidden" name="email" value="${admin.email}">
-                            <input type="submit" value="Delete" id="submit">           
+                            <input type="submit" class="btn btn-danger" value="Delete" id="submit">           
                         </form>
                     </td>       
                 </tr>

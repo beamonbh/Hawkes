@@ -18,22 +18,41 @@
             <div class="page-header">
                 <h1>Edit Administrator Information</h1>
             </div>  
-            <form action="signInServlet" method="post">
-                <label>Email:</label>
-                <input type="hidden" name="emailEdit" value="${email}">
-                <input placeholder="${email}" type="email"><br>        
-                <label>First Name:</label>
-                <input placeholder="${firstName}}" type="text"
-                       name="firstNameEdit" value="${firstName}"><br>
-
-                <label>Last Name:</label>
-                <input placeholder="${lastName}" type="text"
-                       name="lastNameEdit" value="${lastName}"><br>
-
-                <input type="hidden" name="action" value="editConfirm">
-                <label>&nbsp;</label>
-                <input type="hidden" name="emailToEdit" value="${email}">
-                <input type="submit" value="Update Admin" id="submit">   
+            <form class="form-horizontal" action="signInServlet" method="post">
+                <div class="form-group">
+                    <label class="control-label col-sm-2">
+                        Email:
+                    </label>
+                    <div class="col-sm-3"> 
+                        <input type="hidden" name="emailEdit" value="${email}">
+                        <input placeholder="${email}" type="email">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2">
+                        First Name:
+                    </label>
+                    <div class="col-sm-3">
+                        <input placeholder="${firstName}}" type="text" name="firstNameEdit" value="${firstName}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2">
+                        Last Name:
+                    </label>
+                    <div class="col-sm-3">
+                        <input placeholder="${lastName}" type="text" name="lastNameEdit" value="${lastName}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2"></label>
+                    <div>
+                        <input type="hidden" name="action" value="editConfirm">
+                        <label>&nbsp;</label>
+                        <input type="hidden" name="emailToEdit" value="${email}">
+                        <input type="submit" class="btn btn-default" value="Update Admin" id="submit"> 
+                    </div>
+                </div>
             </form>
         </div>
     </body>
