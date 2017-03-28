@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+     	<title>Brett Perrine</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="Hawkes_CSS.css">
+    </head>
+    <body>
+        <div class="container" >
+            
+            <div class="jumbotron text-center">
+                <h1>Welcome to the Hawkes Learning Systems Meeting Optimizer!</h1>
+            </div>
+            
+            <div class="row">
+                <div class="col-sm-6 text-center">
+                    <form action="signInServlet" method="post">
+                        <button type="submit" class="btn btn-primary" name="action" value="join" >
+                            Join Now
+                        </button>
+                    </form>
+                </div>
+                <div class="col-sm-6 text-center">
+                    <form action="employeeServlet" method="post">
+                        <button type="submit" class="btn btn-primary" name="action" value="display">
+                            View Employees
+                        </button>
+                    </form>
+                </div>   
+            </div>
+        </div>
+    </body>
+</html>

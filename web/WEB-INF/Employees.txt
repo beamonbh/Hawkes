@@ -1,0 +1,3 @@
+bdp1077@gmail.com|Brett|Perrine|Back-End Developer
+beamonb@g.cofc.edu|Brielin|Beamon|Front-End Developer
+turnero@g.cofc.edu|Odis|Turner|Database Administrator
